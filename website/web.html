@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover beautiful stays and book your next getaway with StayVista." />
+  <title>StayVista — Find your kind of stay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="StayVista home"><span class="brand-mark">S</span><span>stay<span class="brand-accent">vista</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#stays">Explore stays</a><a href="#experiences">Experiences</a><a href="#why-us">Why StayVista</a>
+    </nav>
+    <div class="header-actions"><button class="icon-button" id="favoritesNav" aria-label="Show saved stays">♡ <span class="saved-count">0</span></button><button class="host-button" id="hostButton">List your property</button><button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow light-eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</span>
+        <h1>Find a stay.<br><em>Find your happy.</em></h1>
+        <p>Thoughtful places, unforgettable moments, and room to be yourself.</p>
+      </div>
+      <form class="search-panel" id="searchForm">
+        <label class="search-field destination-field"><span class="field-icon">⌖</span><span class="field-copy"><small>WHERE TO?</small><input id="destination" type="text" placeholder="City, hotel, or destination" autocomplete="off" /></span></label>
+        <label class="search-field"><span class="field-icon">▦</span><span class="field-copy"><small>CHECK IN</small><input id="checkin" type="date" required /></span></label>
+        <label class="search-field"><span class="field-icon">▦</span><span class="field-copy"><small>CHECK OUT</small><input id="checkout" type="date" required /></span></label>
+        <label class="search-field guests-field"><span class="field-icon">♙</span><span class="field-copy"><small>GUESTS</small><select id="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6+ guests</option></select></span></label>
+        <button class="search-button" type="submit">Search stays <span>↗</span></button>
+      </form>
+      <div class="hero-note"><span>✦</span> Handpicked stays for every kind of escape</div>
+    </section>
+
+    <section class="trust-row" aria-label="StayVista benefits">
+      <div><span class="trust-icon">✦</span><span><strong>Handpicked stays</strong><small>Places worth the trip</small></span></div>
+      <div><span class="trust-icon">⌁</span><span><strong>Best-price promise</strong><small>More stay, less spend</small></span></div>
+      <div><span class="trust-icon">♡</span><span><strong>Made for memories</strong><small>Little details, big feeling</small></span></div>
+    </section>
+
+    <section class="section" id="stays">
+      <div class="section-heading">
+        <div><span class="eyebrow">A PLACE FOR EVERY PACE</span><h2>Stays you'll <em>love</em></h2><p>From slow mornings by the sea to city breaks that never sleep.</p></div>
+        <button class="text-button" id="clearFilters">Clear filters <span>↗</span></button>
+      </div>
+      <div class="category-row" id="categoryRow">
+        <button class="category active" data-category="All"><span>✧</span> All stays</button>
+        <button class="category" data-category="Beach"><span>⌁</span> Beach</button>
+        <button class="category" data-category="Mountain"><span>♧</span> Mountain</button>
+        <button class="category" data-category="City"><span>▦</span> City breaks</button>
+        <button class="category" data-category="Luxury"><span>✦</span> Luxury</button>
+        <button class="category" data-category="Nature"><span>♧</span> Nature</button>
+      </div>
+      <div class="results-line"><span id="resultsText">Showing our favorite stays</span><label>Sort by <select id="sortSelect"><option value="recommended">Recommended</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rating">Guest rating</option></select></label></div>
+      <div class="hotel-grid" id="hotelGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No stays found just yet</h3><p>Try another destination or clear your filters to see all our handpicked stays.</p><button class="primary-button" id="showAllButton">Show all stays</button></div>
+    </section>
+
+    <section class="experience-banner" id="experiences">
+      <div class="experience-image"></div><div class="experience-copy"><span class="eyebrow light-eyebrow">MORE THAN A ROOM</span><h2>Collect moments,<br><em>not just destinations.</em></h2><p>Sunrise hikes, hidden cafés, slow afternoons, and local stories. Your next favorite memory is closer than you think.</p><button class="light-button" id="experienceButton">Find your escape <span>↗</span></button></div>
+    </section>
+
+    <section class="why-section" id="why-us"><span class="eyebrow">THE STAYVISTA DIFFERENCE</span><h2>Travel should feel <em>good.</em></h2><div class="why-grid"><article><span>01</span><h3>Picked with purpose</h3><p>We look for character, comfort, and those thoughtful touches that make a stay special.</p></article><article><span>02</span><h3>Easy from the start</h3><p>Clear prices, simple booking steps, and all your trip details in one place.</p></article><article><span>03</span><h3>Your kind of getaway</h3><p>Find a weekend reset, a family adventure, or somewhere to celebrate the everyday.</p></article></div></section>
+
+    <section class="newsletter"><div><span class="eyebrow">A LITTLE INSPIRATION, IN YOUR INBOX</span><h2>Good places. <em>Good stories.</em></h2><p>Get travel ideas and occasional offers from StayVista.</p></div><form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Your email address" required /><button type="submit">Count me in ↗</button></form><p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span>stay<span class="brand-accent">vista</span></span></a><p>Make room for the good stuff.</p><div><a href="#stays">Explore</a><a href="#why-us">About us</a><a href="mailto:hello@stayvista.example">Contact</a></div><small>© <span id="year"></span> StayVista. Demo website for learning purposes.</small></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="modal" id="hotelModal"><button class="modal-close" data-close="hotelModal" aria-label="Close">×</button><div id="hotelModalContent"></div></dialog>
+  <dialog class="modal booking-modal" id="bookingModal"><button class="modal-close" data-close="bookingModal" aria-label="Close">×</button><div id="bookingContent"></div></dialog>
+  <dialog class="modal small-modal" id="hostModal"><button class="modal-close" data-close="hostModal" aria-label="Close">×</button><span class="eyebrow">GROW WITH US</span><h2>Have a place people will love?</h2><p>Our property-hosting program is coming soon. Leave your details with our team to learn more.</p><form id="hostForm" class="stack-form"><label>Your name<input required placeholder="Full name"></label><label>Email address<input required type="email" placeholder="you@example.com"></label><label>Property location<input required placeholder="City or destination"></label><button class="primary-button" type="submit">Request information ↗</button></form></dialog>
+  <dialog class="modal small-modal" id="myBookingsModal"><button class="modal-close" data-close="myBookingsModal" aria-label="Close">×</button><span class="eyebrow">YOUR TRIP DETAILS</span><h2>My demo bookings</h2><div id="myBookingsContent"></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
